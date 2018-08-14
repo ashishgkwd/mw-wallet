@@ -1,0 +1,14 @@
+<div>
+  <p>Current User Balance: {{currentBalance$ | async}}</p>
+
+  <div>
+    <input type="text" #amount>
+    <div>
+      <p>
+        <button (click)="updateBalance(amount.value, 'add')">(+) Add Balance</button>
+        &nbsp;
+        <button (click)="udateBalance(amount.value, 'reduce')">(+) Reduce Balance</button>
+      </p>
+    </div>
+  </div>
+</div>

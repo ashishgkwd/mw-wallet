@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: sans-serif;
+
+    .box {
+        transform: translateY(100px);
+        margin: 0 auto;
+        max-width: 960px;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        text-align: center;
+    }
+
+    .menu {
+        a {
+            padding-left: 12px;
+        }
+    }
+}
