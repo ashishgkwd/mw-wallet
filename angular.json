@@ -120,6 +120,46 @@
           }
         }
       }
+    },
+    "mm-transfers": {
+      "root": "projects/mm-transfers",
+      "sourceRoot": "projects/mm-transfers/src",
+      "projectType": "library",
+      "prefix": "mm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mm-transfers/tsconfig.lib.json",
+            "project": "projects/mm-transfers/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/mm-transfers/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mm-transfers/src/test.ts",
+            "tsConfig": "projects/mm-transfers/tsconfig.spec.json",
+            "karmaConfig": "projects/mm-transfers/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mm-transfers/tsconfig.lib.json",
+              "projects/mm-transfers/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "my-wallet"

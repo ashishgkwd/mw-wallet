@@ -4,7 +4,7 @@ import { LogTransactionsAction } from './transactions.actions';
 interface Log {
   type:string;
   amount:number;
-  timestamp?:number;
+  timestamp:number;
 }
 
 export class TransactionsStateModel {
@@ -22,6 +22,6 @@ export class TransactionsState {
   add(ctx: StateContext<TransactionsStateModel>, action: LogTransactionsAction) {
     const state = ctx.getState();
     console.log('payload: ', action.payload);
-    ctx.setState({ log: [...state.log, action.payload ] });
+    ctx.setState({ log: [...state.log, {...action.payload, timestamp:Date.now() }] });
   }
 }
