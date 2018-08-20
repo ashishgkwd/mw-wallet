@@ -1,3 +1,11 @@
+# IMPORTANT:
+
+Before running the app please build the `mm-transfers` component by running the below command:
+
+`ng build --prod mm-transfers`
+
+post successful build run: `ng-serve`
+
 # MyWallet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
