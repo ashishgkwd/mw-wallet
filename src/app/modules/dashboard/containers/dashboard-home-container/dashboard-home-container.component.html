@@ -1,0 +1,12 @@
+<div>
+  <p>
+    Quick summary of your wallet: {{txnList$ | async}}
+  </p>
+  <div>
+    <mw-wallet userBalance="{{currentBalance$|async}}"></mw-wallet>
+  </div>
+  <hr>
+  <div>
+    <mw-txn-list [transferList]="txnList$|async"></mw-txn-list>
+  </div>
+</div>

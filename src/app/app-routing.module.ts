@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShellComponent } from './core/components/shell/shell.component';
 
 const routes: Routes = [
-  {path:'home', component:ShellComponent},
-  {path:'topup', loadChildren: './modules/topup/topup.module#TopupModule'},
-  {path:'transfers', loadChildren: './modules/transfers/transfers.module#TransfersModule'},
+  {path: 'dashboard', loadChildren: './modules/dashboard/dashboard.module#DashboardModule'},
+  {path: 'topup', loadChildren: './modules/topup/topup.module#TopupModule'},
+  {path: 'transfers', loadChildren: './modules/transfers/transfers.module#TransfersModule'},
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
 ];
 
 @NgModule({

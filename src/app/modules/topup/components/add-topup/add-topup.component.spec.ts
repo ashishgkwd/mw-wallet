@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopupHomeComponent } from './topup-home.component';
+import { AddTopupComponent } from './add-topup.component';
 
-describe('TopupHomeComponent', () => {
-  let component: TopupHomeComponent;
-  let fixture: ComponentFixture<TopupHomeComponent>;
+describe('AddTopupComponent', () => {
+  let component: AddTopupComponent;
+  let fixture: ComponentFixture<AddTopupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopupHomeComponent ]
+      declarations: [ AddTopupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopupHomeComponent);
+    fixture = TestBed.createComponent(AddTopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

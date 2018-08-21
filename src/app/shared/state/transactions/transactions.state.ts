@@ -2,9 +2,9 @@ import { State, Action, StateContext } from '@ngxs/store';
 import { LogTransactionsAction } from './transactions.actions';
 
 interface Log {
-  type:string;
-  amount:number;
-  timestamp:number;
+  type: string;
+  amount: number;
+  timestamp: number;
 }
 
 export class TransactionsStateModel {

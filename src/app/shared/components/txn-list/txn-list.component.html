@@ -1,0 +1,16 @@
+<div>
+  <p>
+    Transation List:
+  </p>
+
+  <p>
+    <li *ngFor="let t of transferList">
+        <span>
+           Type : {{t.type}} | Amount : {{t.amount}} | Time : {{t.timestamp|date: 'short'}}
+        </span>
+    </li>
+  </p>
+
+</div>
+
+

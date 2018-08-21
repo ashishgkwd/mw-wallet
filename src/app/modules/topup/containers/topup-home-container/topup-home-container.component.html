@@ -1,0 +1,8 @@
+<div>
+  <p>
+    <mw-wallet userBalance="{{currentBalance$|async}}"></mw-wallet>
+  </p>
+  <div>
+    <mw-add-topup (addTopup)="updateBalance($event)"></mw-add-topup>
+  </div>
+</div>

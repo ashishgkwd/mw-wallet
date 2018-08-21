@@ -1,0 +1,10 @@
+<div>
+    <input type="text" #amount>
+    <div>
+      <p>
+        <button (click)="updateBalance(amount.value, 'add')">(+) Add Balance</button>
+        &nbsp;
+        <button (click)="updateBalance(amount.value, 'reduce')">(-) Reduce Balance</button>
+      </p>
+    </div>
+  </div>

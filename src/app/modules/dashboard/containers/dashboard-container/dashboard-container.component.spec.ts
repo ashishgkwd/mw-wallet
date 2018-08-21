@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopupStatusComponent } from './topup-status.component';
+import { DashboardContainerComponent } from './dashboard-container.component';
 
-describe('TopupStatusComponent', () => {
-  let component: TopupStatusComponent;
-  let fixture: ComponentFixture<TopupStatusComponent>;
+describe('DashboardContainerComponent', () => {
+  let component: DashboardContainerComponent;
+  let fixture: ComponentFixture<DashboardContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopupStatusComponent ]
+      declarations: [ DashboardContainerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopupStatusComponent);
+    fixture = TestBed.createComponent(DashboardContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ShellComponent implements OnInit {
 
   @Select(state => state.user.balance)
-  currentBalance$:Observable<any>;
+  currentBalance$: Observable<any>;
 
   constructor() { }
 
