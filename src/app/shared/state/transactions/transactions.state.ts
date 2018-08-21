@@ -22,6 +22,6 @@ export class TransactionsState {
   add(ctx: StateContext<TransactionsStateModel>, action: LogTransactionsAction) {
     const state = ctx.getState();
     console.log('payload: ', action.payload);
-    ctx.setState({ log: [...state.log, {...action.payload, timestamp:Date.now() }] });
+    ctx.setState({ log: [...state.log, {...action.payload, timestamp: Date.now() }] });
   }
 }

@@ -7,8 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WalletComponent implements OnInit {
 
-  @Input() userBalance:number;
-  
+  @Input() userBalance: number;
+
   constructor() { }
 
   ngOnInit() {
