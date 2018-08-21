@@ -1,16 +1,20 @@
-<div>
+<div *ngIf="transferList.length">
   <p>
     Transation List:
   </p>
 
-  <p>
-    <li *ngFor="let t of transferList">
-        <span>
-           Type : {{t.type}} | Amount : {{t.amount}} | Time : {{t.timestamp|date: 'short'}}
-        </span>
-    </li>
-  </p>
-
+  <div>
+    <table align="center">
+      <tr>
+        <th>Amount</th>
+        <th>Txn Type</th>
+        <th>Time</th>
+      </tr>
+      <tr *ngFor="let t of transferList">
+        <td>{{t.amount}}</td>
+        <td>{{t.type}}</td>
+        <td>{{t.timestamp|date:'short'}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
-
-
