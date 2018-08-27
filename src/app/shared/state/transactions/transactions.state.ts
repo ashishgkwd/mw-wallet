@@ -1,7 +1,7 @@
 import { State, Action, StateContext } from '@ngxs/store';
 import { LogTransactionsAction } from './transactions.actions';
 
-interface Log {
+export interface Log {
   type: string;
   amount: number;
   timestamp: number;

@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TxnListComponent implements OnInit {
 
-  @Input() transferList = [];
+  @Input() transferList: [];
 
   constructor() { }
 
