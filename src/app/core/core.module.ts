@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { UserState, TransactionsState } from '../shared/state';
 import { ShellComponent } from './components/shell/shell.component';
@@ -18,6 +19,7 @@ import { CardsState } from '../shared/state/cards/cards.state';
       CardsState,
       TransactionsState
     ]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot()
   ],
   declarations: [ShellComponent]

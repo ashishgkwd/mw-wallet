@@ -4,6 +4,8 @@ import { Select, Store } from '@ngxs/store';
 import { IncrementUserBalance, DecrementUserBalance } from '../../../../shared/state/user/user.actions';
 import { LogTransactionsAction } from '../../../../shared/state';
 import { Topup } from '../../models/topup';
+import { MetaInfo, CardsState } from '../../../../shared/state/cards/cards.state';
+import { CardsAction } from '../../../../shared/state/cards/cards.actions';
 
 @Component({
   selector: 'mw-topup-home',
@@ -15,9 +17,16 @@ export class TopupHomeContainerComponent implements OnInit {
   @Select(state => state.user.balance)
   currentBalance$: Observable<any>;
 
+  @Select(state => state.user.cards.metaInfo)
+  metaInfo$: Observable<MetaInfo>;
+
   constructor(private store: Store) { }
 
   ngOnInit() {
+    this.metaInfo$.subscribe(
+      res => console.log('RES ', res),
+      err => console.log('ERR ', err)
+    );
   }
 
   updateBalance(newTopUp: Topup) {
@@ -31,6 +40,17 @@ export class TopupHomeContainerComponent implements OnInit {
       default:
         break;
     }
+
+    const newMetaInfo: MetaInfo = {
+      cardId: `abc123-${newTopUp.amount}`,
+      expiry: 'Dec2018',
+      issuerInfo: {
+        issuedBy: 'MastertCard',
+        issuedFor: `Rs. ${newTopUp.amount}`
+        }
+      };
+
     this.store.dispatch(new LogTransactionsAction(newTopUp));
+    this.store.dispatch(new CardsAction(newMetaInfo));
   }
 }

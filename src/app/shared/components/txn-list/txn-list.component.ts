@@ -10,6 +10,7 @@ export class TxnListComponent implements OnInit {
   @Input() transferList: [];
 
   constructor() { }
+  
 
   ngOnInit() {
   }

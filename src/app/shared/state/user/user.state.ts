@@ -14,7 +14,7 @@ export class UserStateModel {
   defaults: {
     balance: 100,
     wallet: { balance: 100, currency: 'USD' },
-    cards: { cards: [] }
+    cards: null
   },
   children: [
     WalletState,
