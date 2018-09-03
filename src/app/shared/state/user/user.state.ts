@@ -13,7 +13,7 @@ export class UserStateModel {
   name: 'user',
   defaults: {
     balance: 100,
-    wallet: { balance: 100, currency: 'USD' },
+    wallet: null,
     cards: null
   },
   children: [
