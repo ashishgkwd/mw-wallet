@@ -4,6 +4,7 @@ import { TopupContainerComponent } from './containers/topup-container/topup-cont
 import { TopupHomeContainerComponent } from './containers/topup-home-container/topup-home-container.component';
 import { TopupPaymentContainerComponent } from './containers/topup-payment-container/topup-payment-container.component';
 import { TopupStatusContainerComponent } from './containers/topup-status-container/topup-status-container.component';
+import { CanDeactivateGuard } from '../../core/guards/route.guard';
 
 const routes: Routes = [
     {
@@ -11,7 +12,7 @@ const routes: Routes = [
         component: TopupContainerComponent,
         children: [
             {path: 'options', component: TopupHomeContainerComponent},
-            {path: 'payment', component: TopupPaymentContainerComponent},
+            {path: 'payment', component: TopupPaymentContainerComponent, canDeactivate: [CanDeactivateGuard]},
             {path: 'paymentinfo', component: TopupStatusContainerComponent},
             {path: '', redirectTo: 'options', pathMatch: 'full'},
         ]
