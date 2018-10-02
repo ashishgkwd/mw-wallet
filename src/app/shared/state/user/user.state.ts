@@ -1,5 +1,5 @@
 import { State, Action, StateContext } from '@ngxs/store';
-import { IncrementUserBalance, DecrementUserBalance } from './user.actions';
+import { IncrementUserBalance, DecrementUserBalance, LogoutUserAction } from './user.actions';
 import { WalletState, WalletStateModel } from '../wallet/wallet.state';
 import { CardsStateModel, CardsState } from '../cards/cards.state';
 
@@ -34,5 +34,12 @@ export class UserState {
     const state = ctx.getState();
     const newBalance: number = state.balance - action.payload.amount;
     ctx.setState({ ...state, balance: newBalance });
+  }
+
+  @Action(LogoutUserAction)
+  clearSessionAndLogout(ctx: StateContext<UserStateModel>, action: LogoutUserAction) {
+    const state = ctx.getState();
+    console.log('new state: ', state);
+    ctx.setState({ ...state, balance: 0 });
   }
 }
