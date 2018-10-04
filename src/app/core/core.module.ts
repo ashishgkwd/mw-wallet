@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxsModule, NGXS_PLUGINS } from '@ngxs/store';
+import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { UserState, TransactionsState } from '../shared/state';
@@ -20,8 +21,9 @@ import { logoutPlugin } from '../shared/plugins/logout.plugin';
       CardsState,
       TransactionsState
     ]),
+    NgxsStoragePluginModule.forRoot({storage: StorageOption.SessionStorage}),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [
     {
