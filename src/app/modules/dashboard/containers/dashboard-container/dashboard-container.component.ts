@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 @Component({
   selector: 'mw-dashboard-container',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alertService: AlertService) {
+    console.log('Dashboard TS: ', this.alertService.ts);
+   }
 
   ngOnInit() {
   }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertService } from './shared/services/alert.service';
 
 @Component({
   selector: 'mw-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'My Wallet';
+
+  constructor(private alertService: AlertService) {
+    console.log('AppComponent: ', this.alertService);
+  }
 }
